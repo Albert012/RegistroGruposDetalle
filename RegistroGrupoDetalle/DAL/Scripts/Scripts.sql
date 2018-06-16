@@ -1,0 +1,4 @@
+CREATE DATABASE GruposDB
+GO
+USE GruposDB
+GO
