@@ -1,6 +1,6 @@
 ﻿namespace RegistroGrupoDetalle.UI.Registros
 {
-    partial class rRegistroGrupo
+    partial class rGrupo
     {
         /// <summary>
         /// Required designer variable.

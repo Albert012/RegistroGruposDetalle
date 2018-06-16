@@ -11,9 +11,16 @@ namespace RegistroGrupoDetalle.DAL
     {
         public DbSet<Grupos> Grupos { get; set; }
 
+        public DbSet<Personas> Personas { get; set; }
+
         public Contexto() : base("ConStr")
         {
 
+        }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
         }
     }
 }

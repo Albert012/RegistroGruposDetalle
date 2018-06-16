@@ -1,6 +1,6 @@
 ﻿namespace RegistroGrupoDetalle.UI.Consultas
 {
-    partial class cConsultaGrupo
+    partial class cGrupo
     {
         /// <summary>
         /// Required designer variable.

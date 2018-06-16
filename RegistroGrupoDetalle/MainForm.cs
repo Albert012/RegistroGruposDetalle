@@ -21,17 +21,17 @@ namespace RegistroGrupoDetalle
 
         private void registroToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            rRegistroGrupo registro = new rRegistroGrupo();
-            registro.MdiParent = this.MdiParent;
-            registro.ShowDialog();
+            rGrupo rgrupo = new rGrupo();
+            rgrupo.MdiParent = this.MdiParent;
+            rgrupo.ShowDialog();
 
         }
 
         private void consultaToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            cConsultaGrupo consulta = new cConsultaGrupo();
-            consulta.MdiParent = this.MdiParent;
-            consulta.ShowDialog();
+            cGrupo cgrupo = new cGrupo();
+            cgrupo.MdiParent = this.MdiParent;
+            cgrupo.ShowDialog();
         }
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
@@ -43,6 +43,20 @@ namespace RegistroGrupoDetalle
         private void MainForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void personasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rPersona rpersona = new rPersona();
+            rpersona.MdiParent = this.MdiParent;
+            rpersona.ShowDialog();
+        }
+
+        private void personasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            cPersonas cpersona = new cPersonas();
+            cpersona.MdiParent = this.MdiParent;
+            cpersona.ShowDialog();
         }
     }
 }

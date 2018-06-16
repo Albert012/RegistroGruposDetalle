@@ -10,9 +10,9 @@ using System.Linq.Expressions;
 using RegistroGrupoDetalle.Entidades;
 namespace RegistroGrupoDetalle.UI.Consultas
 {
-    public partial class cConsultaGrupo : Form
+    public partial class cGrupo : Form
     {
-        public cConsultaGrupo()
+        public cGrupo()
         {
             InitializeComponent();
         }

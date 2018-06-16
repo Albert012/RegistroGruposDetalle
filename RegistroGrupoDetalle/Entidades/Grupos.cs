@@ -12,9 +12,9 @@ namespace RegistroGrupoDetalle.Entidades
         public int GrupoId { get; set; }
         public DateTime Fecha { get; set; }
         public string Descripcion { get; set; }
-        public int Cantidad { get; set; }//Cantidad de Estudiantes
-        public int Grupo { get; set; }//Grupo deseado
-        public int Integrantes { get; set; }//Integrantes por grupo
+        public Decimal Cantidad { get; set; }//Cantidad de Estudiantes
+        public Decimal Grupo { get; set; }//Grupo deseado
+        public Decimal Integrantes { get; set; }//Integrantes por grupo
 
         public Grupos()
         {

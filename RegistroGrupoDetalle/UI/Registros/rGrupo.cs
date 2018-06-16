@@ -12,9 +12,9 @@ using RegistroGrupoDetalle.Entidades;
 
 namespace RegistroGrupoDetalle.UI.Registros
 {
-    public partial class rRegistroGrupo : Form
+    public partial class rGrupo : Form
     {
-        public rRegistroGrupo()
+        public rGrupo()
         {
             InitializeComponent();
         }
@@ -31,29 +31,29 @@ namespace RegistroGrupoDetalle.UI.Registros
 
         private bool Validar()
         {
-            bool paso = true;
+            bool CamposLLeno = true;
 
 
             if (descripcionTextBox.Text == "")
             {
                 ValidarErrorProvider.SetError(descripcionTextBox, "Debes Introducir La Descripcion Del Estudiante");
-                paso = false;
+                CamposLLeno = false;
             }
             else
                 if (cantidadNumericUpDown.Value == 0)
             {
                 ValidarErrorProvider.SetError(cantidadNumericUpDown, "Debes Ingresar La Cantidad De Estudiantes");
-                paso = false;
+                CamposLLeno = false;
             }
             else
                 if (grupoNumericUpDown.Value == 0)
             {
                 ValidarErrorProvider.SetError(grupoNumericUpDown, "Debes Ingresar La Cantidad De Grupos Deseados");
-                paso = false;
+                CamposLLeno = false;
             }
 
 
-            return paso;
+            return CamposLLeno;
         }
 
         private Grupos LlenaClase()
