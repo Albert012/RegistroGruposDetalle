@@ -16,7 +16,22 @@ namespace RegistroGrupoDetalle.Entidades
         public Decimal Grupo { get; set; }//Grupo deseado
         public Decimal Integrantes { get; set; }//Integrantes por grupo
 
+        [StringLength(100)]
+        public string Comentarios { get; set; }
+
+        public virtual ICollection<GruposDetalle> Detalle { get; set; }
+
         public Grupos()
+        {
+            this.Detalle = new List<GruposDetalle>();
+        }
+
+        public void AgregarDetalle(int id, int GrupoId, int PersonaId)
+        {
+            this.Detalle.Add(new GruposDetalle(id, GrupoId, PersonaId));
+        }
+
+        /*public Grupos()
         {
             GrupoId = 0;
             Fecha = DateTime.Now;
@@ -24,7 +39,7 @@ namespace RegistroGrupoDetalle.Entidades
             Cantidad = 0;
             Grupo = 0;
             Integrantes = 0;
-        }
+        }*/
 
 
     }

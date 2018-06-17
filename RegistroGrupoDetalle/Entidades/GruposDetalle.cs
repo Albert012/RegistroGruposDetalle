@@ -14,16 +14,22 @@ namespace RegistroGrupoDetalle.Entidades
         public int Id { get; set; }
         public int GrupoId { get; set; }
         public int PersonaId { get; set; }
-        public string Cargo { get; set; }
 
-        [ForeignKey("GrupoId")]
+        [ForeignKey("PersonaId")]
+        public virtual Personas Persona { get; set; }
+        public string Cargo { get; set; }
 
         public GruposDetalle()
         {
             Id = 0;
-            PersonaId = 0;
+            GrupoId = 0;
         }
 
-
+        public GruposDetalle(int id, int grupoId, int personaId)
+        {
+            Id = id;
+            GrupoId = grupoId;
+            PersonaId = personaId;
+        }
     }
 }

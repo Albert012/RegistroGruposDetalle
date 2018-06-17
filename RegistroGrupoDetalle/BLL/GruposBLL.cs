@@ -133,6 +133,64 @@ namespace RegistroGrupoDetalle.BLL
             return cantidad / grupo;
         }
 
+        public static bool Modificar2(Grupos grupo)
+        {
+            bool paso = false;
+            Contexto contexto = new Contexto();
+
+            try
+            {
+
+                foreach(var i in grupo.Detalle)
+                {
+                    var status = i.Id > 0 ? EntityState.Modified : EntityState.Added;
+                    contexto.Entry(i).State = status;
+                }
+
+                contexto.Entry(grupo).State = EntityState.Modified;
+
+                if(contexto.SaveChanges() > 0 )
+                {
+                    paso = true;
+                }
+                
+            }
+            catch(Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                contexto.Dispose();
+            }
+            return paso;
+        }
+
+        public static Grupos Buscar2(int id)
+        {
+            Contexto contexto = new Contexto();
+            Grupos grupo = new Grupos();
+
+            try
+            {
+                grupo = contexto.Grupos.Find(id);
+                grupo.Detalle.Count();
+
+                foreach(var i in grupo.Detalle)
+                {
+                    string s = i.Persona.Nombres;
+                }
+            }
+            catch(Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                contexto.Dispose();
+            }
+            return grupo;
+        }
 
     }
 }
