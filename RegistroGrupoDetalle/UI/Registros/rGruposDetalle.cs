@@ -31,7 +31,7 @@ namespace RegistroGrupoDetalle.UI.Registros
         private void Buscar_button_Click(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(idNumericUpDown.Value);
-            Grupos grupo = BLL.GruposBLL.Buscar2(id);
+            Grupos grupo = BLL.GruposBLL.Buscar(id);
 
             if (grupo != null)
             {
@@ -126,7 +126,7 @@ namespace RegistroGrupoDetalle.UI.Registros
             if (idNumericUpDown.Value == 0)
                 paso = BLL.GruposBLL.Guardar(grupo);
             else
-                paso = BLL.GruposBLL.Modificar2(grupo);
+                paso = BLL.GruposBLL.Modificar(grupo);
 
             if(paso)
             {

@@ -135,7 +135,7 @@ namespace RegistroGrupoDetalle.BLL
             return cantidad / grupo;
         }
 
-        public static bool Modificar2(Grupos grupo)
+        public static bool Modificar(Grupos grupo)
         {
             bool paso = false;
             Contexto contexto = new Contexto();
@@ -168,7 +168,7 @@ namespace RegistroGrupoDetalle.BLL
             return paso;
         }
 
-        public static Grupos Buscar2(int id)
+        public static Grupos Buscar(int id)
         {
             Contexto contexto = new Contexto();
             Grupos grupo = new Grupos();

@@ -55,10 +55,10 @@ namespace RegistroGrupoDetalle.BLL.Tests
             Assert.AreEqual(paso, true);*/
 
             int idgrupo = BLL.GruposBLL.GetList(g => true)[0].GrupoId;
-            Grupos grupo = BLL.GruposBLL.Buscar2(idgrupo);
+            Grupos grupo = BLL.GruposBLL.Buscar(idgrupo);
 
             grupo.Detalle.Add(new GruposDetalle(0, grupo.GrupoId, 1));
-            bool paso = BLL.GruposBLL.Modificar2(grupo);
+            bool paso = BLL.GruposBLL.Modificar(grupo);
             Assert.AreEqual(true, paso);
         }
 
@@ -74,7 +74,7 @@ namespace RegistroGrupoDetalle.BLL.Tests
         public void BuscarTest()
         {
             Grupos grupo = new Grupos();
-            grupo = BLL.GruposBLL.Buscar2(1);
+            grupo = BLL.GruposBLL.Buscar(1);
             Assert.IsNotNull(grupo);
         }
 
@@ -89,7 +89,7 @@ namespace RegistroGrupoDetalle.BLL.Tests
         public void CalcularIntegrantesTest()
         {
             Grupos grupo = new Grupos();
-            grupo = BLL.GruposBLL.Buscar2(1);
+            grupo = BLL.GruposBLL.Buscar(1);
 
             grupo.Integrantes = BLL.GruposBLL.CalcularIntegrantes(grupo.Cantidad, grupo.Grupo);
             Assert.IsNotNull(grupo);
