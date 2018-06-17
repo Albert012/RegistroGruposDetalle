@@ -58,5 +58,12 @@ namespace RegistroGrupoDetalle
             cpersona.MdiParent = this.MdiParent;
             cpersona.ShowDialog();
         }
+
+        private void gruposDetalleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rGruposDetalle grupodetalle = new rGruposDetalle();
+            grupodetalle.MdiParent = this.MdiParent;
+            grupodetalle.ShowDialog();
+        }
     }
 }

@@ -35,7 +35,7 @@ namespace RegistroGrupoDetalle.BLL
             }
             return paso;
         }
-
+        /*
         public static bool Modificar(Grupos grupo)
         {
             bool paso = true;
@@ -60,6 +60,7 @@ namespace RegistroGrupoDetalle.BLL
             }
             return paso;
         }
+        */
 
         public static bool Eliminar(int id)
         {
@@ -87,7 +88,7 @@ namespace RegistroGrupoDetalle.BLL
             }
             return paso;
         }
-
+        /*
         public static Grupos Buscar(int id)
         {
             Contexto contexto = new Contexto();
@@ -107,6 +108,7 @@ namespace RegistroGrupoDetalle.BLL
             }
             return grupo;
         }
+        */
 
         public static List<Grupos> GetList(Expression<Func<Grupos, bool>> expression)
         {

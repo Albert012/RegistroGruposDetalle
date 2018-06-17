@@ -14,7 +14,7 @@ namespace RegistroGrupoDetalle.BLL.Tests
         [TestMethod()]
         public void GuardarTest()
         {
-            bool paso = false;
+            /*bool paso = false;
             Grupos grupo = new Grupos();
             grupo.GrupoId = 2;
             grupo.Descripcion = "Mate";
@@ -24,13 +24,25 @@ namespace RegistroGrupoDetalle.BLL.Tests
 
             paso = BLL.GruposBLL.Guardar(grupo);
 
-            Assert.AreEqual(paso,true);
+            Assert.AreEqual(paso,true);*/
+
+            Grupos grupo = new Grupos
+            {
+                Fecha = DateTime.Now,
+                Comentarios = "Me Encanto"
+            };
+
+            grupo.Detalle.Add(new GruposDetalle(0,0,1));
+
+            bool paso = BLL.GruposBLL.Guardar(grupo);
+            Assert.AreEqual(true, paso);
+
         }
 
         [TestMethod()]
         public void ModificarTest()
         {
-            bool paso = false;
+            /*bool paso = false;
             Grupos grupo = new Grupos();
             grupo.GrupoId = 1;
             grupo.Descripcion = "Matematica";
@@ -38,9 +50,16 @@ namespace RegistroGrupoDetalle.BLL.Tests
             grupo.Grupo = 2;
             grupo.Integrantes = 25;
 
-            paso = BLL.GruposBLL.Guardar(grupo);
+            paso = BLL.GruposBLL.Modificar2(grupo);
 
-            Assert.AreEqual(paso, true);
+            Assert.AreEqual(paso, true);*/
+
+            int idgrupo = BLL.GruposBLL.GetList(g => true)[0].GrupoId;
+            Grupos grupo = BLL.GruposBLL.Buscar2(idgrupo);
+
+            grupo.Detalle.Add(new GruposDetalle(0, grupo.GrupoId, 1));
+            bool paso = BLL.GruposBLL.Modificar2(grupo);
+            Assert.AreEqual(true, paso);
         }
 
         [TestMethod()]
@@ -55,7 +74,7 @@ namespace RegistroGrupoDetalle.BLL.Tests
         public void BuscarTest()
         {
             Grupos grupo = new Grupos();
-            grupo = BLL.GruposBLL.Buscar(1);
+            grupo = BLL.GruposBLL.Buscar2(1);
             Assert.IsNotNull(grupo);
         }
 
@@ -70,7 +89,7 @@ namespace RegistroGrupoDetalle.BLL.Tests
         public void CalcularIntegrantesTest()
         {
             Grupos grupo = new Grupos();
-            grupo = BLL.GruposBLL.Buscar(1);
+            grupo = BLL.GruposBLL.Buscar2(1);
 
             grupo.Integrantes = BLL.GruposBLL.CalcularIntegrantes(grupo.Cantidad, grupo.Grupo);
             Assert.IsNotNull(grupo);

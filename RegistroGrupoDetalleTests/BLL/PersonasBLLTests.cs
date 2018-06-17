@@ -16,7 +16,7 @@ namespace RegistroGrupoDetalle.BLL.Tests
         {
             bool paso = false;
             Personas persona = new Personas();
-            persona.PersonaId = 2;
+            persona.PersonaId = 0;
             persona.Nombres = "Albert De Jesus Rosario";
             persona.Direccion = "La Bomba De Cenovi, El Canal";
             persona.Cedula = "056-0181541-7";

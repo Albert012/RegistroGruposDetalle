@@ -86,7 +86,7 @@ namespace RegistroGrupoDetalle.UI.Registros
                 }
                 else
                 {
-                    paso = BLL.GruposBLL.Modificar(grupo);
+                    paso = BLL.GruposBLL.Modificar2(grupo);
                 }
 
                 if (paso)
@@ -113,7 +113,7 @@ namespace RegistroGrupoDetalle.UI.Registros
         private void Buscar_button_Click(object sender, EventArgs e)
         {
             int GrupoId = Convert.ToInt32(grupoIdNumericUpDown.Value);
-            Grupos grupo = BLL.GruposBLL.Buscar(GrupoId);
+            Grupos grupo = BLL.GruposBLL.Buscar2(GrupoId);
 
             if (grupo != null)
             {
