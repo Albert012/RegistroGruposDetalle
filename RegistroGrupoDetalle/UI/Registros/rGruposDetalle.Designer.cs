@@ -33,7 +33,7 @@
             System.Windows.Forms.Label label2;
             System.Windows.Forms.Label label3;
             System.Windows.Forms.Label label4;
-            this.gruposDetalleBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            System.Windows.Forms.Label cargoLabel;
             this.idNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.Comentarios_textBox = new System.Windows.Forms.TextBox();
@@ -49,21 +49,20 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Fecha_dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.ValidarErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.cargoTextBox = new System.Windows.Forms.TextBox();
+            this.gruposDetalleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             idLabel = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
             label4 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.gruposDetalleBindingSource)).BeginInit();
+            cargoLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.idNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DetalleDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Cantidad_numericUpDown)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ValidarErrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gruposDetalleBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // gruposDetalleBindingSource
-            // 
-            this.gruposDetalleBindingSource.DataSource = typeof(RegistroGrupoDetalle.Entidades.GruposDetalle);
             // 
             // idLabel
             // 
@@ -73,6 +72,33 @@
             idLabel.Size = new System.Drawing.Size(28, 19);
             idLabel.TabIndex = 1;
             idLabel.Text = "Id:";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new System.Drawing.Point(11, 32);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(68, 19);
+            label2.TabIndex = 17;
+            label2.Text = "Persona:";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new System.Drawing.Point(368, 36);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(74, 19);
+            label3.TabIndex = 19;
+            label3.Text = "Cantidad:";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new System.Drawing.Point(246, 20);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(54, 19);
+            label4.TabIndex = 22;
+            label4.Text = "Fecha:";
             // 
             // idNumericUpDown
             // 
@@ -114,7 +140,7 @@
             this.DetalleDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DetalleDataGridView.Location = new System.Drawing.Point(7, 65);
             this.DetalleDataGridView.Name = "DetalleDataGridView";
-            this.DetalleDataGridView.Size = new System.Drawing.Size(511, 170);
+            this.DetalleDataGridView.Size = new System.Drawing.Size(536, 170);
             this.DetalleDataGridView.TabIndex = 11;
             // 
             // Eliminar_button
@@ -134,7 +160,7 @@
             // Agregar_button
             // 
             this.Agregar_button.Image = global::RegistroGrupoDetalle.Properties.Resources.new2;
-            this.Agregar_button.Location = new System.Drawing.Point(355, 28);
+            this.Agregar_button.Location = new System.Drawing.Point(519, 30);
             this.Agregar_button.Name = "Agregar_button";
             this.Agregar_button.Size = new System.Drawing.Size(26, 28);
             this.Agregar_button.TabIndex = 13;
@@ -171,15 +197,6 @@
             this.Nuevo_button.UseVisualStyleBackColor = true;
             this.Nuevo_button.Click += new System.EventHandler(this.Nuevo_button_Click);
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(11, 32);
-            label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(68, 19);
-            label2.TabIndex = 17;
-            label2.Text = "Persona:";
-            // 
             // Persona_comboBox
             // 
             this.Persona_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -190,25 +207,18 @@
             this.Persona_comboBox.Size = new System.Drawing.Size(121, 23);
             this.Persona_comboBox.TabIndex = 18;
             // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(204, 34);
-            label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(74, 19);
-            label3.TabIndex = 19;
-            label3.Text = "Cantidad:";
-            // 
             // Cantidad_numericUpDown
             // 
             this.Cantidad_numericUpDown.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cantidad_numericUpDown.Location = new System.Drawing.Point(278, 31);
+            this.Cantidad_numericUpDown.Location = new System.Drawing.Point(442, 33);
             this.Cantidad_numericUpDown.Name = "Cantidad_numericUpDown";
             this.Cantidad_numericUpDown.Size = new System.Drawing.Size(70, 22);
             this.Cantidad_numericUpDown.TabIndex = 20;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(cargoLabel);
+            this.groupBox1.Controls.Add(this.cargoTextBox);
             this.groupBox1.Controls.Add(label2);
             this.groupBox1.Controls.Add(this.Cantidad_numericUpDown);
             this.groupBox1.Controls.Add(this.Agregar_button);
@@ -218,19 +228,10 @@
             this.groupBox1.Controls.Add(this.DetalleDataGridView);
             this.groupBox1.Location = new System.Drawing.Point(12, 51);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(526, 286);
+            this.groupBox1.Size = new System.Drawing.Size(565, 296);
             this.groupBox1.TabIndex = 21;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cargo De Personas";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new System.Drawing.Point(246, 20);
-            label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(54, 19);
-            label4.TabIndex = 22;
-            label4.Text = "Fecha:";
             // 
             // Fecha_dateTimePicker
             // 
@@ -245,12 +246,34 @@
             // 
             this.ValidarErrorProvider.ContainerControl = this;
             // 
+            // cargoLabel
+            // 
+            cargoLabel.AutoSize = true;
+            cargoLabel.Location = new System.Drawing.Point(202, 34);
+            cargoLabel.Name = "cargoLabel";
+            cargoLabel.Size = new System.Drawing.Size(55, 19);
+            cargoLabel.TabIndex = 20;
+            cargoLabel.Text = "Cargo:";
+            // 
+            // cargoTextBox
+            // 
+            this.cargoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.gruposDetalleBindingSource, "Cargo", true));
+            this.cargoTextBox.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cargoTextBox.Location = new System.Drawing.Point(263, 33);
+            this.cargoTextBox.Name = "cargoTextBox";
+            this.cargoTextBox.Size = new System.Drawing.Size(100, 22);
+            this.cargoTextBox.TabIndex = 21;
+            // 
+            // gruposDetalleBindingSource
+            // 
+            this.gruposDetalleBindingSource.DataSource = typeof(RegistroGrupoDetalle.Entidades.GruposDetalle);
+            // 
             // rGruposDetalle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.ClientSize = new System.Drawing.Size(550, 471);
+            this.ClientSize = new System.Drawing.Size(585, 471);
             this.Controls.Add(this.Fecha_dateTimePicker);
             this.Controls.Add(label4);
             this.Controls.Add(this.groupBox1);
@@ -265,18 +288,18 @@
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.Control;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "rGruposDetalle";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Grupos Personas Detalle";
-            ((System.ComponentModel.ISupportInitialize)(this.gruposDetalleBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.idNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DetalleDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Cantidad_numericUpDown)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ValidarErrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gruposDetalleBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -300,5 +323,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DateTimePicker Fecha_dateTimePicker;
         private System.Windows.Forms.ErrorProvider ValidarErrorProvider;
+        private System.Windows.Forms.TextBox cargoTextBox;
     }
 }

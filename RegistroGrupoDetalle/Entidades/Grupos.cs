@@ -26,9 +26,9 @@ namespace RegistroGrupoDetalle.Entidades
             this.Detalle = new List<GruposDetalle>();
         }
 
-        public void AgregarDetalle(int id, int GrupoId, int PersonaId)
+        public void AgregarDetalle(int id, int GrupoId, int PersonaId, string Cargo)
         {
-            this.Detalle.Add(new GruposDetalle(id, GrupoId, PersonaId));
+            this.Detalle.Add(new GruposDetalle(id, GrupoId, PersonaId,Cargo));
         }
 
         /*public Grupos()

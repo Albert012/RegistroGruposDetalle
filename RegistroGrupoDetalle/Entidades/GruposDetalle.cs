@@ -25,11 +25,12 @@ namespace RegistroGrupoDetalle.Entidades
             GrupoId = 0;
         }
 
-        public GruposDetalle(int id, int grupoId, int personaId)
+        public GruposDetalle(int id, int grupoId, int personaId, string cargo)
         {
             Id = id;
             GrupoId = grupoId;
             PersonaId = personaId;
+            Cargo = cargo;
         }
     }
 }

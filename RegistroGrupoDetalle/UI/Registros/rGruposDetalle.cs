@@ -96,7 +96,8 @@ namespace RegistroGrupoDetalle.UI.Registros
                 grupo.AgregarDetalle(
                     ToInt(item.Cells["Id"].Value),
                     ToInt(item.Cells["GrupoId"].Value),
-                    ToInt(item.Cells["PersonaId"].Value)
+                    ToInt(item.Cells["PersonaId"].Value),
+                    ToInt(item.Cells["Cargo"].Value).ToString()
                     );
             }
 
@@ -161,9 +162,10 @@ namespace RegistroGrupoDetalle.UI.Registros
             //agregar nuevo detalle con los datos
             detalle.Add(
                 new GruposDetalle(
-                    id: 0, 
-                    grupoId: (int)idNumericUpDown.Value, 
-                    personaId: (int)Persona_comboBox.SelectedValue
+                    id: 0,
+                    grupoId: (int)idNumericUpDown.Value,
+                    personaId: (int)Persona_comboBox.SelectedValue,
+                    cargo: (string)cargoTextBox.Text 
                    ));
             //cargar el detalle al grid
             DetalleDataGridView.DataSource = null;
